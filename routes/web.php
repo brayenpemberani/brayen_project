@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AdminController;
 
 use Livewire\Volt\Volt;
 
@@ -16,3 +17,6 @@ Route::get('/products/{id}', [ProductController::class, 'show'])->name('products
 Route::get('/contact', [ContactController::class, 'create'])->name('contact.create');
 
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
+Route::get('/admin', [AdminController::class, 'create']);
+Route::post('/admin', [AdminController::class, 'store'])->name('admin.store');
