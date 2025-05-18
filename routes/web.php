@@ -20,3 +20,19 @@ Route::post('/contact', [ContactController::class, 'store'])->name('contact.stor
 
 Route::get('/admin', [AdminController::class, 'create']);
 Route::post('/admin', [AdminController::class, 'store'])->name('admin.store');
+
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+Route::get('/gallery', function () {
+    return view('gallery');
+});

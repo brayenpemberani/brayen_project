@@ -24,11 +24,7 @@ class AdminController extends Controller
             'role'    => 'required|in:Super Admin,Kasir',
         ]);
 
-        // Jika ingin menyimpan ke database, bisa ditambahkan di sini.
-        // Contoh (jika punya model Admin):
-        // Admin::create($validated);
-
-        // Redirect kembali ke form dengan pesan sukses
+        
         return redirect('/admin')->with('success', 'Data admin berhasil disimpan!');
     }
 }
