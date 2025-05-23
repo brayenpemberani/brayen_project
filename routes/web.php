@@ -37,8 +37,7 @@ Route::get('/contact', function () {
 Route::get('/gallery', function () {
     return view('gallery');
 });
-
-Route::get('/', [LingkunganController::class, 'home'])->name('home');
-Route::get('/daur-ulang', [LingkunganController::class, 'daurUlang'])->name('daur_ulang');
-Route::get('/perubahan-iklim', [LingkunganController::class, 'perubahanIklim'])->name('perubahan_iklim');
-Route::get('/konservasi', [LingkunganController::class, 'konservasi'])->name('konservasi');
+Route::view('/', 'home')->name('home');
+Route::view('/daur_ulang', 'daur_ulang')->name('daur_ulang');
+Route::view('/perubahan_iklim', 'perubahan_iklim')->name('perubahan_iklim');
+Route::view('/konservasi', 'konservasi')->name('konservasi');
