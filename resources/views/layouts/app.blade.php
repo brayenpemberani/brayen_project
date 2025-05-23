@@ -1,18 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>@yield('title')</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@yield('title', 'Edukasi Lingkungan')</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    @include('partials.header')
+<body class="bg-green-50 text-green-900 min-h-screen flex flex-col">
 
-    <div class="container mt-4">
-        @yield('content')
-    </div>
+<header class="bg-green-700 text-white p-6 shadow-md">
+    <h1 class="text-3xl font-bold text-center">Edukasi Lingkungan</h1>
+    <nav class="mt-4">
+        <ul class="flex justify-center space-x-8 text-lg">
+            <li><a href="{{ route('home') }}" class="hover:underline">Beranda</a></li>
+            <li><a href="{{ route('daur_ulang') }}" class="hover:underline">Daur Ulang</a></li>
+            <li><a href="{{ route('perubahan_iklim') }}" class="hover:underline">Perubahan Iklim</a></li>
+            <li><a href="{{ route('konservasi') }}" class="hover:underline">Konservasi</a></li>
+        </ul>
+    </nav>
+</header>
 
-    @include('partials.footer')
+<main class="flex-grow container mx-auto p-6 max-w-4xl">
+    @yield('content')
+</main>
+
+<footer class="bg-green-700 text-white p-4 text-center">
+    &copy; 2025 Edukasi Lingkungan Indonesia
+</footer>
+
 </body>
 </html>

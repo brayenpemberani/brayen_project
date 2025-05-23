@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LingkunganController;
 
 use Livewire\Volt\Volt;
 
@@ -36,3 +37,8 @@ Route::get('/contact', function () {
 Route::get('/gallery', function () {
     return view('gallery');
 });
+
+Route::get('/', [LingkunganController::class, 'home'])->name('home');
+Route::get('/daur-ulang', [LingkunganController::class, 'daurUlang'])->name('daur_ulang');
+Route::get('/perubahan-iklim', [LingkunganController::class, 'perubahanIklim'])->name('perubahan_iklim');
+Route::get('/konservasi', [LingkunganController::class, 'konservasi'])->name('konservasi');
